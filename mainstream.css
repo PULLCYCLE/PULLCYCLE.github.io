@@ -1,0 +1,20 @@
+html {
+	background-image: url('background.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+nav {
+	text-align: center;
+	padding-top: 15px;
+}
+
+a {
+	text-align: center;
+	color: yellow;
+	padding-top: 15px;
+}
+
+img {
+	
+}
+
