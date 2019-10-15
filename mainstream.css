@@ -1,0 +1,125 @@
+html {
+	background-image: url('background.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+nav {
+	text-align: left;
+	padding-top: 15px;
+	padding-left:3%;
+	font-size:14pt;
+	font-family: 'ZincoBlackCondensed';
+	word-spacing:20px;
+}
+
+a {
+	text-align: ;
+	color: white;
+	padding-top: 15px;
+	text-decoration: none;
+	
+}
+
+
+a:hover{
+	color: black;
+	transition: 1s linear;
+	text-decoration: underline;
+}
+
+.logo{
+	width: 130px;
+	height: 130px;
+	padding-left: 47%;
+}
+
+labe {
+	text-align: right;
+	padding-right: 50px;
+}
+
+
+label.selectGeneral
+{
+    display: block;
+    position: relative;
+}
+
+/** Это обещанный placeholder **/
+label.selectGeneral:before
+{
+    content: attr(placeholder); /** Взять текст из атрибута placeholder **/
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    max-width: 20%;
+
+    text-align: right;
+    white-space: nowrap; /** Не переносить слова **/
+
+    color: #adadad;
+
+    overflow-x: hidden; /** Скрыть лишнее **/
+}
+
+/** А это стрелочка **/
+label.selectGeneral:after
+{
+    content: "<>";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+
+    background-color: #ffffff;
+
+    transform: rotate(90deg);
+}
+
+label.selectGeneral input,
+label.selectGeneral label
+{
+    display: none;
+}
+
+label.selectGeneral div
+{
+    min-width: 20%;
+    max-height: 500px; /** Ограничения на высоту списка выборов **/
+
+    overflow-x: hidden;
+}
+
+/** Если наш альтернативный select открыт, то wrapper **/
+label.selectGeneral input[type="radio"]:checked ~ div
+{
+    position: absolute; /** приобретает абсолютную позицию **/
+    top: <высота label.selectGeneral>; /** и смешается немного вниз, открывая placeholder **/
+
+    overflow-y: auto;
+}
+
+/** Все label внутри wrapper'а при открытом select **/
+label.selectGeneral input[type="radio"]:checked ~ div > label,
+/** И выбранный вариант **/
+label.selectGeneral input[type="radio"]:checked + label
+{
+    display: block; /** должны быть видимыми **/
+}
+
+/** Подсветим элемент на который наведена мышь при открытом select **/
+label.selectGeneral input[type="radio"]:checked ~ div > label:hover
+{
+    background-color: #ffa834;
+}
+
+/** При закрытом select, нужно делегировать событие клика мышью с выбранного элемента родительскому label **/
+label.selectGeneral input[type="radio"]:not(:checked) ~ div > input[type="radio"]:checked + label
+{
+    position: relative;
+    z-index: -1; 
+}
