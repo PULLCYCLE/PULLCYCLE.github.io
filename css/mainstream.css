@@ -4,7 +4,13 @@ body {
     top:0px;
     background-size: 1920px;
     background-repeat: no-repeat;
+
+html {
+	background-image: url('background.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
 }
+
 nav {
 	text-align: left;
 	padding-top: 15px;
@@ -47,10 +53,9 @@ label.selectGeneral
     position: relative;
 }
 
-/** Это обещанный placeholder **/
 label.selectGeneral:before
 {
-    content: attr(placeholder); /** Взять текст из атрибута placeholder **/
+    content: attr(placeholder); 
     display: inline-block;
     position: absolute;
     top: 0;
@@ -60,14 +65,14 @@ label.selectGeneral:before
     max-width: 100%;
 
     text-align: left;
-    white-space: nowrap; /** Не переносить слова **/
+    white-space: nowrap; 
 
     color: #adadad;
 
-    overflow-x: hidden; /** Скрыть лишнее **/
+    overflow-x: hidden; 
 }
 
-/** А это стрелочка **/
+
 label.selectGeneral:after
 {
     content: "<>";
@@ -92,35 +97,33 @@ label.selectGeneral label
 label.selectGeneral div
 {
     min-width: 100%;
-    max-height: 500px; /** Ограничения на высоту списка выборов **/
+    max-height: 500px; 
 
     overflow-x: hidden;
 }
 
-/** Если наш альтернативный select открыт, то wrapper **/
 label.selectGeneral input[type="radio"]:checked ~ div
 {
-    position: absolute; /** приобретает абсолютную позицию **/
-    top: <высота label.selectGeneral>; /** и смешается немного вниз, открывая placeholder **/
+    position: absolute; 
+    top: <высота label.selectGeneral>; 
 
     overflow-y: auto;
 }
 
-/** Все label внутри wrapper'а при открытом select **/
+
 label.selectGeneral input[type="radio"]:checked ~ div > label,
-/** И выбранный вариант **/
+
 label.selectGeneral input[type="radio"]:checked + label
 {
-    display: block; /** должны быть видимыми **/
+    display: block; 
 }
 
-/** Подсветим элемент на который наведена мышь при открытом select **/
+
 label.selectGeneral input[type="radio"]:checked ~ div > label:hover
 {
     background-color: #ffa834;
 }
 
-/** При закрытом select, нужно делегировать событие клика мышью с выбранного элемента родительскому label **/
 label.selectGeneral input[type="radio"]:not(:checked) ~ div > input[type="radio"]:checked + label
 {
     position: relative;
