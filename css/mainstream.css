@@ -8,7 +8,7 @@ body {
 
 nav {
 	text-align: left;
-	padding-top:  em;
+	padding-top:;
 	padding-left:3%;
 	font-size:14pt;
 	font-family: 'ZincoBlackCondensed';
@@ -60,7 +60,7 @@ label.selectGeneral:before
     left: 0;
     z-index: -1;
 
-    max-width: 30%;
+    max-width: 50%;
 
     text-align: left;
     white-space: nowrap; 
@@ -78,7 +78,7 @@ label.selectGeneral:after
     position: absolute;
     top: 0;
     float: right;
-    position: relative;
+
 
     text-align: center;
 
@@ -95,7 +95,7 @@ label.selectGeneral label
 
 label.selectGeneral div
 {
-    min-width: 100%;
+    min-width: 70%;
     max-height: 500px; 
 
     overflow-x: hidden;
