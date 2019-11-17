@@ -1,8 +1,8 @@
 body {
-	background-image: url("../images/background.jpg");
+    background-image: url("../images/background.jpg");
     left:0px;
     top:0px;
-    background-size: 1920px;
+    background-size: 100%;
     background-repeat: no-repeat;
 }
 
